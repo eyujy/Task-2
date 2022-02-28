@@ -1,15 +1,15 @@
 using System;
+using System.Collections.Generic;
+
 namespace OrderApi.Models
 {
     public class Order
     {
-        public string OrderId { get; set; }
+        public int OrderId { get; set; }
 
-        public string ProductId { get; set; }
+        public List<Product> Products { get; set; }
 
-        public double ProductPrice { get; set; }
-
-        public string Total { get; set; }
+        public double Total { get; set; }
 
         public string OrderStatus { get; set; }
 
@@ -17,4 +17,10 @@ namespace OrderApi.Models
 
 
     }
+    public class Product
+    {
+        public string ProductId { get; set; }
+        public double ProductPrice { get; set; }
+    }
+    
 }

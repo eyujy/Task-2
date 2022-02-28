@@ -29,7 +29,7 @@ namespace OrderApi.Controllers
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(string id)
+        public async Task<ActionResult<Order>> GetOrder(int id)
         {
             var order = await _context.Orders.FindAsync(id);
 
@@ -44,7 +44,7 @@ namespace OrderApi.Controllers
         // PUT: api/Orders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrder(string id, Order order)
+        public async Task<IActionResult> PutOrder(int id, Order order)
         {
             if (id != order.OrderId)
             {
@@ -99,7 +99,7 @@ namespace OrderApi.Controllers
 
         // DELETE: api/Orders/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrder(string id)
+        public async Task<IActionResult> DeleteOrder(int id)
         {
             var order = await _context.Orders.FindAsync(id);
             if (order == null)
@@ -113,7 +113,7 @@ namespace OrderApi.Controllers
             return NoContent();
         }
 
-        private bool OrderExists(string id)
+        private bool OrderExists(int id)
         {
             return _context.Orders.Any(e => e.OrderId == id);
         }

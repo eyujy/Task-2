@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: order
-        image: eyujy/orderapi:v1
+        image: eyujy/orderapi:v4
         resources:
           limits:
             memory: "128Mi"
@@ -85,5 +85,3 @@ spec:
   minReplicas: 1
   maxReplicas: 3
   targetCPUUtilizationPercentage: 65
-
-# kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://order; done"
